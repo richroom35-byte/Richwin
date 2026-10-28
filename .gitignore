@@ -1,0 +1,33 @@
+# Next.js
+.next/
+out/
+
+# Dependencies
+node_modules/
+
+# Environment
+.env
+.env*.local
+.env.production
+.env.development
+
+# Capacitor & Android builds
+android/.gradle
+android/build
+android/app/build
+android/local.properties
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS Files
+.DS_Store
+*.pem
+*firebase-adminsdk*.json
+firebase-service-account.json
+firebase-admin.json
+
+# Local fallback data
+data/
