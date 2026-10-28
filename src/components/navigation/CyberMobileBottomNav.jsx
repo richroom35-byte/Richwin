@@ -76,8 +76,14 @@ export default function CyberMobileBottomNav({
               onClick={tab.action}
               className="relative -top-3 flex flex-col items-center justify-center"
             >
-              <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-[var(--neon-purple)] to-[var(--neon-cyan)] p-[2px] shadow-[0_0_20px_rgba(0,240,255,0.6)] animate-bounce">
-                <div className="w-full h-full bg-[#0b0f22] rounded-[14px] flex items-center justify-center text-[var(--neon-cyan)]">
+              <div
+                className="w-12 h-12 rounded-2xl p-[2px] animate-bounce"
+                style={{
+                  background: 'var(--primary-gradient)',
+                  boxShadow: '0 0 20px var(--neon-cyan-glow)',
+                }}
+              >
+                <div className="w-full h-full bg-[var(--bg-surface)] rounded-[14px] flex items-center justify-center text-[var(--neon-cyan)]">
                   <Icon size={22} />
                 </div>
               </div>
@@ -101,7 +107,10 @@ export default function CyberMobileBottomNav({
             <div className="relative">
               <Icon size={20} />
               {active && (
-                <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-[var(--neon-cyan)] shadow-[0_0_8px_#00f0ff]"></span>
+                <span
+                  className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-[var(--neon-cyan)]"
+                  style={{ boxShadow: '0 0 8px var(--neon-cyan)' }}
+                ></span>
               )}
             </div>
             <span className="text-[10px] mt-1 tracking-tight font-sub font-semibold">

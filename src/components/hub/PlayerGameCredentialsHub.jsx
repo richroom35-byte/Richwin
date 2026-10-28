@@ -257,7 +257,7 @@ export default function PlayerGameAccountsHub({
       {/* Section Header */}
       <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'flex-end', justifyContent: 'space-between', gap: '16px', marginBottom: '24px' }}>
         <div>
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', fontSize: '11px', fontFamily: 'Lexend, sans-serif', fontWeight: 800, color: '#00F0FF', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '6px' }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', fontSize: '11px', fontFamily: 'Lexend, sans-serif', fontWeight: 800, color: 'var(--neon-cyan)', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '6px' }}>
             <Key size={13} />
             <span>PLAYER PLATFORM MANAGER</span>
           </div>
@@ -272,9 +272,9 @@ export default function PlayerGameAccountsHub({
             onClick={fetchAccountsAndRequests}
             disabled={loading}
             style={{
-              backgroundColor: '#140E33',
-              border: '1px solid rgba(0, 240, 255, 0.3)',
-              color: '#00F0FF',
+              backgroundColor: 'var(--bg-surface)',
+              border: '1px solid var(--chrome-border)',
+              color: 'var(--neon-cyan)',
               borderRadius: '9999px',
               padding: '7px 16px',
               fontSize: '11.5px',
@@ -355,13 +355,13 @@ export default function PlayerGameAccountsHub({
           <div
             style={{
               background: 'linear-gradient(135deg, rgba(20, 14, 51, 0.7) 0%, rgba(10, 6, 26, 0.7) 100%)',
-              border: '1px dashed rgba(0, 240, 255, 0.3)',
+              border: '1px dashed var(--chrome-border)',
               borderRadius: '18px',
               padding: '30px 20px',
               textAlign: 'center',
             }}
           >
-            <Key size={36} color="#00F0FF" style={{ margin: '0 auto 12px auto', opacity: 0.8 }} />
+            <Key size={36} color="var(--neon-cyan)" style={{ margin: '0 auto 12px auto', opacity: 0.8 }} />
             <h4 style={{ margin: '0 0 6px 0', fontFamily: 'Lexend, sans-serif', fontSize: '16px', fontWeight: 900, color: '#FFFFFF' }}>
               Sign in to view your game accounts
             </h4>
@@ -372,8 +372,8 @@ export default function PlayerGameAccountsHub({
               type="button"
               onClick={() => onOpenAuth && onOpenAuth('login')}
               style={{
-                background: 'linear-gradient(135deg, #E026D8 0%, #00F0FF 100%)',
-                color: '#FFFFFF',
+                background: 'var(--primary-gradient)',
+                color: '#030712',
                 border: 'none',
                 borderRadius: '9999px',
                 padding: '10px 28px',
@@ -381,7 +381,7 @@ export default function PlayerGameAccountsHub({
                 fontSize: '12px',
                 fontWeight: 900,
                 cursor: 'pointer',
-                boxShadow: '0 4px 18px rgba(0, 240, 255, 0.35)',
+                boxShadow: '0 4px 18px var(--neon-cyan-glow)',
               }}
             >
               SIGN IN / REGISTER
@@ -391,14 +391,14 @@ export default function PlayerGameAccountsHub({
           /* User has 0 active accounts yet */
           <div
             style={{
-              backgroundColor: '#0F0924',
+              backgroundColor: 'var(--bg-surface)',
               border: '1px dashed rgba(255, 255, 255, 0.1)',
               borderRadius: '18px',
               padding: '28px 20px',
               textAlign: 'center',
             }}
           >
-            <Sparkles size={28} color="#00F0FF" style={{ margin: '0 auto 10px auto', opacity: 0.8 }} />
+            <Sparkles size={28} color="var(--neon-cyan)" style={{ margin: '0 auto 10px auto', opacity: 0.8 }} />
             <p style={{ margin: '0 0 6px 0', fontFamily: 'Lexend, sans-serif', fontSize: '14.5px', fontWeight: 800, color: '#FFFFFF' }}>
               No Active Platform IDs Yet
             </p>
@@ -446,8 +446,8 @@ export default function PlayerGameAccountsHub({
                           borderRadius: '12px',
                           overflow: 'hidden',
                           position: 'relative',
-                          backgroundColor: '#070514',
-                          border: '1px solid rgba(0, 240, 255, 0.3)',
+                          backgroundColor: 'var(--bg-deep)',
+                          border: '1px solid var(--chrome-border)',
                           flexShrink: 0,
                         }}
                       >
@@ -497,7 +497,7 @@ export default function PlayerGameAccountsHub({
                     {/* Credentials Box */}
                     <div
                       style={{
-                        backgroundColor: '#070514',
+                        backgroundColor: 'var(--bg-deep)',
                         border: '1px solid rgba(255, 255, 255, 0.08)',
                         borderRadius: '12px',
                         padding: '10px 12px',
@@ -513,7 +513,7 @@ export default function PlayerGameAccountsHub({
                           <p style={{ margin: 0, fontSize: '9px', color: '#8E849E', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
                             USERNAME / ID
                           </p>
-                          <p style={{ margin: '2px 0 0 0', fontFamily: 'Lexend, sans-serif', fontSize: '13px', fontWeight: 800, color: '#00F0FF' }}>
+                          <p style={{ margin: '2px 0 0 0', fontFamily: 'Lexend, sans-serif', fontSize: '13px', fontWeight: 800, color: 'var(--neon-cyan)' }}>
                             {acc.username || 'VIP Player'}
                           </p>
                         </div>
@@ -521,11 +521,11 @@ export default function PlayerGameAccountsHub({
                           type="button"
                           onClick={() => handleCopy(acc.username, `user_${index}`)}
                           style={{
-                            background: 'rgba(0, 240, 255, 0.12)',
-                            border: '1px solid rgba(0, 240, 255, 0.3)',
+                            background: 'var(--neon-cyan-glow)',
+                            border: '1px solid var(--chrome-border)',
                             borderRadius: '6px',
                             padding: '4px 8px',
-                            color: '#00F0FF',
+                            color: 'var(--neon-cyan)',
                             fontSize: '10px',
                             fontFamily: 'Lexend, sans-serif',
                             fontWeight: 800,
@@ -570,11 +570,11 @@ export default function PlayerGameAccountsHub({
                             type="button"
                             onClick={() => handleCopy(acc.password, `pass_${index}`)}
                             style={{
-                              background: 'rgba(0, 240, 255, 0.12)',
-                              border: '1px solid rgba(0, 240, 255, 0.3)',
+                              background: 'var(--neon-cyan-glow)',
+                              border: '1px solid var(--chrome-border)',
                               borderRadius: '6px',
                               padding: '4px 8px',
-                              color: '#00F0FF',
+                              color: 'var(--neon-cyan)',
                               fontSize: '10px',
                               fontFamily: 'Lexend, sans-serif',
                               fontWeight: 800,
@@ -598,8 +598,8 @@ export default function PlayerGameAccountsHub({
                       type="button"
                       onClick={() => matchedGame && onPlayGame ? onPlayGame(matchedGame) : window.open(`/game/${matchedGame?.gameId || matchedGame?.id}`, '_self')}
                       style={{
-                        background: 'linear-gradient(135deg, #E026D8 0%, #00F0FF 100%)',
-                        color: '#FFFFFF',
+                        background: 'var(--primary-gradient)',
+                        color: '#030712',
                         border: 'none',
                         borderRadius: '10px',
                         padding: '9px 0',
@@ -611,7 +611,7 @@ export default function PlayerGameAccountsHub({
                         alignItems: 'center',
                         justifyContent: 'center',
                         gap: '6px',
-                        boxShadow: '0 4px 14px rgba(0, 240, 255, 0.3)',
+                        boxShadow: '0 4px 14px var(--neon-cyan-glow)',
                       }}
                     >
                       <Play size={13} fill="#0E0816" />
@@ -622,9 +622,9 @@ export default function PlayerGameAccountsHub({
                       type="button"
                       onClick={() => setLoadCoinsModal({ open: true, game: matchedGame || { title: acc.gameTitle, gameId: acc.gameId } })}
                       style={{
-                        backgroundColor: '#140E33',
-                        border: '1px solid rgba(0, 240, 255, 0.4)',
-                        color: '#00F0FF',
+                        backgroundColor: 'var(--bg-surface)',
+                        border: '1px solid var(--chrome-border)',
+                        color: 'var(--neon-cyan)',
                         borderRadius: '10px',
                         padding: '9px 0',
                         fontFamily: 'Lexend, sans-serif',
@@ -742,9 +742,9 @@ export default function PlayerGameAccountsHub({
                         gap: '4px',
                         padding: '4px 8px',
                         borderRadius: '6px',
-                        backgroundColor: 'rgba(0, 240, 255, 0.15)',
-                        border: '1px solid rgba(0, 240, 255, 0.4)',
-                        color: '#00F0FF',
+                        backgroundColor: 'var(--neon-cyan-glow)',
+                        border: '1px solid var(--chrome-border)',
+                        color: 'var(--neon-cyan)',
                         fontSize: '10px',
                         fontWeight: 800,
                         cursor: 'pointer',

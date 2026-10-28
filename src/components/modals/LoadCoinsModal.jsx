@@ -122,10 +122,10 @@ export default function LoadCoinsModal({
         style={{
           width: '100%',
           maxWidth: '460px',
-          backgroundColor: '#0E0A24',
-          border: '1.5px solid #00F0FF',
+          backgroundColor: 'var(--bg-card)',
+          border: '1.5px solid var(--chrome-border)',
           borderRadius: '24px',
-          boxShadow: '0 25px 60px rgba(0, 0, 0, 0.9), 0 0 35px rgba(0, 240, 255, 0.25)',
+          boxShadow: '0 25px 60px rgba(0, 0, 0, 0.9), 0 0 35px var(--neon-cyan-glow)',
           color: '#FFFFFF',
           fontFamily: 'Lexend, sans-serif',
           maxHeight: '92vh',
@@ -139,12 +139,12 @@ export default function LoadCoinsModal({
                 width: '38px',
                 height: '38px',
                 borderRadius: '12px',
-                backgroundColor: 'rgba(0, 240, 255, 0.15)',
-                border: '1px solid #00F0FF',
+                backgroundColor: 'var(--neon-cyan-glow)',
+                border: '1px solid var(--chrome-border)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                color: '#00F0FF',
+                color: 'var(--neon-cyan)',
               }}
             >
               <Coins size={20} />
@@ -153,7 +153,7 @@ export default function LoadCoinsModal({
               <h3 style={{ margin: 0, fontSize: '18px', fontWeight: 900, color: '#FFFFFF' }}>
                 Load Coins into Game
               </h3>
-              <p style={{ margin: '2px 0 0 0', fontSize: '11.5px', color: '#00F0FF', fontWeight: 700 }}>
+              <p style={{ margin: '2px 0 0 0', fontSize: '11.5px', color: 'var(--neon-cyan)', fontWeight: 700 }}>
                 {gameTitle}
               </p>
             </div>
@@ -177,8 +177,8 @@ export default function LoadCoinsModal({
         {/* Balance Overview Box */}
         <div
           style={{
-            backgroundColor: '#070514',
-            border: '1px solid rgba(0, 240, 255, 0.25)',
+            backgroundColor: 'var(--bg-deep)',
+            border: '1px solid var(--chrome-border)',
             borderRadius: '16px',
             padding: '14px 16px',
             marginBottom: '18px',
@@ -191,7 +191,7 @@ export default function LoadCoinsModal({
             <span style={{ fontSize: '10px', textTransform: 'uppercase', letterSpacing: '0.04em', color: '#9A91A8', fontWeight: 800 }}>
               Available Wallet Balance
             </span>
-            <div style={{ fontSize: '20px', fontWeight: 900, color: '#00F0FF', marginTop: '2px' }}>
+            <div style={{ fontSize: '20px', fontWeight: 900, color: 'var(--neon-cyan)', marginTop: '2px' }}>
               ${availableBalance.toFixed(2)} <span style={{ fontSize: '12px', color: '#CBD5E1' }}>SC</span>
             </div>
           </div>
@@ -306,9 +306,9 @@ export default function LoadCoinsModal({
                       style={{
                         padding: '10px 0',
                         borderRadius: '10px',
-                        border: isSel ? '2px solid #00F0FF' : '1px solid rgba(255, 255, 255, 0.1)',
-                        backgroundColor: isSel ? 'rgba(0, 240, 255, 0.16)' : '#070514',
-                        color: disabled ? '#555' : isSel ? '#00F0FF' : '#FFFFFF',
+                        border: isSel ? '2px solid var(--neon-cyan)' : '1px solid rgba(255, 255, 255, 0.1)',
+                        backgroundColor: isSel ? 'var(--neon-cyan-glow)' : 'var(--bg-deep)',
+                        color: disabled ? '#555' : isSel ? 'var(--neon-cyan)' : '#FFFFFF',
                         fontSize: '13px',
                         fontWeight: 900,
                         cursor: disabled ? 'not-allowed' : 'pointer',
@@ -323,7 +323,7 @@ export default function LoadCoinsModal({
 
               {/* Exact Input */}
               <div style={{ position: 'relative' }}>
-                <span style={{ position: 'absolute', top: '12px', left: '14px', color: '#00F0FF', fontWeight: 900, fontSize: '16px' }}>
+                <span style={{ position: 'absolute', top: '12px', left: '14px', color: 'var(--neon-cyan)', fontWeight: 900, fontSize: '16px' }}>
                   $
                 </span>
                 <input
@@ -336,8 +336,8 @@ export default function LoadCoinsModal({
                   required
                   style={{
                     width: '100%',
-                    backgroundColor: '#070514',
-                    border: '1.5px solid rgba(0, 240, 255, 0.35)',
+                    backgroundColor: 'var(--bg-deep)',
+                    border: '1.5px solid var(--chrome-border)',
                     borderRadius: '12px',
                     padding: '12px 14px 12px 32px',
                     color: '#FFFFFF',
@@ -353,8 +353,8 @@ export default function LoadCoinsModal({
             {/* Escrow Rule Note */}
             <div
               style={{
-                backgroundColor: 'rgba(0, 240, 255, 0.06)',
-                border: '1px solid rgba(0, 240, 255, 0.2)',
+                backgroundColor: 'var(--neon-cyan-glow)',
+                border: '1px solid var(--chrome-border)',
                 borderRadius: '12px',
                 padding: '10px 12px',
                 display: 'flex',
@@ -365,7 +365,7 @@ export default function LoadCoinsModal({
                 lineHeight: 1.4,
               }}
             >
-              <Lock size={14} color="#00F0FF" style={{ flexShrink: 0, marginTop: '2px' }} />
+              <Lock size={14} color="var(--neon-cyan)" style={{ flexShrink: 0, marginTop: '2px' }} />
               <span>
                 <strong>Escrow Security:</strong> When you submit, ${Number(loadAmount || 0).toFixed(2)} SC will be temporarily frozen until staff approves the load into your {gameTitle} player ID. If rejected, coins are immediately returned to your available balance.
               </span>
@@ -375,9 +375,14 @@ export default function LoadCoinsModal({
             <button
               type="submit"
               disabled={loading || loadAmount <= 0 || loadAmount > availableBalance}
-              className="btn-sovereign-coral"
               style={{
                 width: '100%',
+                background: 'var(--primary-gradient)',
+                color: '#030712',
+                borderRadius: '12px',
+                border: 'none',
+                boxShadow: '0 0 15px var(--neon-cyan-glow)',
+                cursor: loading || loadAmount <= 0 || loadAmount > availableBalance ? 'not-allowed' : 'pointer',
                 padding: '14px',
                 fontSize: '13px',
                 display: 'flex',

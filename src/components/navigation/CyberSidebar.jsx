@@ -260,14 +260,18 @@ export default function CyberSidebar({
               </button>
             </div>
             <div className="text-[10px] text-center text-slate-500 font-mono">
-              PLAYERS PARADISE v1.0 • 2026
+              RICH ROOM VIP LOUNGE • 2026
             </div>
           </div>
         ) : (
           <div className="p-2 border-t border-[var(--chrome-border)]/60 flex justify-center">
             <button
               onClick={() => router.push('/deposit')}
-              className="w-10 h-10 rounded-xl bg-[var(--neon-cyan)] text-black flex items-center justify-center shadow-[0_0_15px_rgba(0,240,255,0.4)] hover:scale-105 transition-transform"
+              className="w-10 h-10 rounded-xl text-black flex items-center justify-center hover:scale-105 transition-transform"
+              style={{
+                background: 'var(--primary-gradient)',
+                boxShadow: '0 0 15px var(--neon-cyan-glow)',
+              }}
               title="Deposit Credits"
             >
               <Wallet size={18} />

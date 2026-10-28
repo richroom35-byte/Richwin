@@ -204,7 +204,11 @@ export default function ExternalGameModal({
         {/* Action button */}
         <button
           onClick={launchGame}
-          className="w-full py-3.5 rounded-xl font-heading font-black text-sm tracking-wider bg-gradient-to-r from-[var(--neon-cyan)] to-blue-500 text-black shadow-[0_0_20px_rgba(0,240,255,0.4)] flex items-center justify-center gap-2 hover:scale-101 transition-transform"
+          className="w-full py-3.5 rounded-xl font-heading font-black text-sm tracking-wider text-black flex items-center justify-center gap-2 hover:scale-101 transition-transform cursor-pointer"
+          style={{
+            background: 'var(--primary-gradient)',
+            boxShadow: '0 0 20px var(--neon-cyan-glow)',
+          }}
         >
           <Play size={16} fill="currentColor" />
           <span>LAUNCH WEB PLATFORM</span>

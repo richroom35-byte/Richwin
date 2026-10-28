@@ -462,9 +462,17 @@ export default function HomePage() {
                     onClick={() => setCategory(cat.id)}
                     className={`flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-heading font-bold whitespace-nowrap transition-all ${
                       isSelected
-                        ? 'bg-gradient-to-r from-[var(--neon-cyan)] to-blue-500 text-black shadow-[0_0_15px_rgba(0,240,255,0.4)]'
+                        ? 'text-black'
                         : 'bg-slate-900/80 border border-slate-800 text-slate-300 hover:border-slate-700'
                     }`}
+                    style={
+                      isSelected
+                        ? {
+                            background: 'var(--primary-gradient)',
+                            boxShadow: '0 0 15px var(--neon-cyan-glow)',
+                          }
+                        : undefined
+                    }
                   >
                     <span>{cat.icon}</span>
                     <span>{cat.label}</span>

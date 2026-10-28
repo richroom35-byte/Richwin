@@ -126,21 +126,21 @@ export default function MyGameIdsPage() {
 
         <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
           {/* Header Banner */}
-          <div className="relative overflow-hidden rounded-2xl p-6 sm:p-8 border border-cyan-500/30 bg-gradient-to-r from-slate-950 via-[#0d0724] to-slate-950 shadow-[0_0_30px_rgba(0,240,255,0.15)]">
-            <div className="absolute top-0 right-0 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
-            <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-purple-500/10 rounded-full blur-2xl pointer-events-none" />
+          <div className="relative overflow-hidden rounded-2xl p-6 sm:p-8 border border-[var(--chrome-border)] bg-[var(--bg-card)] shadow-[0_0_30px_var(--neon-cyan-glow)]">
+            <div className="absolute top-0 right-0 w-96 h-96 bg-[var(--neon-cyan)]/10 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-[var(--neon-purple)]/10 rounded-full blur-2xl pointer-events-none" />
 
             <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
               <div className="space-y-2">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 text-xs font-bold tracking-wider uppercase">
-                  <ShieldCheck size={14} className="text-cyan-400" />
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--neon-cyan)]/10 border border-[var(--chrome-border)] text-[var(--neon-cyan)] text-xs font-bold tracking-wider uppercase">
+                  <ShieldCheck size={14} className="text-[var(--neon-cyan)]" />
                   <span>OFFICIAL PLATFORM VAULT</span>
                 </div>
                 <h1 className="text-2xl sm:text-3xl md:text-4xl font-black text-white tracking-tight">
                   MY GAME IDs &amp; PLATFORM ACCOUNTS
                 </h1>
                 <p className="text-sm text-slate-300 max-w-2xl leading-relaxed">
-                  View and manage your verified credentials for Ultra Panda, Orion Stars, Fire Kirin, Game Vault, Milky Way, and Juwa 777. Copy your official login credentials or request credentials for additional platforms below.
+                  View and manage your verified credentials for Orion Star, Fire Kirin, Game Vault, and Juwa. Copy your official login credentials or request credentials for additional platforms below.
                 </p>
               </div>
 
@@ -148,15 +148,19 @@ export default function MyGameIdsPage() {
                 <button
                   type="button"
                   onClick={() => router.push('/games')}
-                  className="px-5 py-2.5 rounded-xl bg-slate-900/80 hover:bg-slate-800 border border-slate-700/60 text-slate-200 text-xs font-bold transition-all flex items-center gap-2"
+                  className="px-5 py-2.5 rounded-xl bg-slate-900/80 hover:bg-slate-800 border border-slate-700/60 text-slate-200 text-xs font-bold transition-all flex items-center gap-2 cursor-pointer"
                 >
-                  <Gamepad2 size={16} className="text-cyan-400" />
+                  <Gamepad2 size={16} className="text-[var(--neon-cyan)]" />
                   <span>Explore Games</span>
                 </button>
                 <button
                   type="button"
                   onClick={() => router.push('/deposit')}
-                  className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-cyan-300 hover:to-blue-400 text-black text-xs font-black shadow-[0_0_20px_rgba(0,240,255,0.4)] transition-all flex items-center gap-2"
+                  className="px-5 py-2.5 rounded-xl text-black text-xs font-black transition-all flex items-center gap-2 cursor-pointer hover:scale-105 active:scale-95"
+                  style={{
+                    background: 'var(--primary-gradient)',
+                    boxShadow: '0 0 20px var(--neon-cyan-glow)',
+                  }}
                 >
                   <Sparkles size={16} />
                   <span>Deposit Funds</span>

@@ -8,10 +8,14 @@ export default {
   theme: {
     extend: {
       colors: {
-        'neon-cyan': '#00f0ff',
-        'neon-purple': '#c026d3',
-        'neon-purple-light': '#e879f9',
-        'bg-deep': '#050711',
+        'neon-cyan': 'var(--neon-cyan)',
+        'neon-cyan-dark': 'var(--neon-cyan-dark)',
+        'neon-purple': 'var(--neon-purple)',
+        'neon-purple-light': 'var(--neon-purple-light)',
+        'bg-deep': 'var(--bg-deep)',
+        'bg-surface': 'var(--bg-surface)',
+        'bg-card': 'var(--bg-card)',
+        'chrome-border': 'var(--chrome-border)',
       },
       fontFamily: {
         heading: ['Orbitron', 'sans-serif'],
@@ -22,3 +26,4 @@ export default {
   },
   plugins: [],
 };
+

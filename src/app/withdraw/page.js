@@ -412,10 +412,10 @@ export default function WithdrawPage() {
         {/* Center Content Body */}
         <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-6">
           {/* Header Banner */}
-          <div className="relative overflow-hidden rounded-3xl border border-[var(--neon-cyan)]/30 bg-gradient-to-r from-blue-950/40 via-slate-900 to-[#0c102b] p-6 sm:p-8 shadow-[0_0_40px_rgba(0,240,255,0.15)]">
+          <div className="relative overflow-hidden rounded-3xl border border-[var(--chrome-border)] bg-[var(--bg-card)] p-6 sm:p-8 shadow-[0_0_40px_var(--neon-cyan-glow)]">
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
               <div>
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--neon-cyan)]/10 border border-[var(--neon-cyan)]/40 text-[var(--neon-cyan)] text-xs font-bold uppercase tracking-wider mb-2">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--neon-cyan)]/10 border border-[var(--chrome-border)] text-[var(--neon-cyan)] text-xs font-bold uppercase tracking-wider mb-2">
                   <ArrowUpRight size={14} />
                   <span>Instant Player Cashout Desk</span>
                 </div>
@@ -428,7 +428,7 @@ export default function WithdrawPage() {
               </div>
 
               {/* Status Badge */}
-              <div className="p-4 rounded-2xl bg-slate-950/80 border border-[var(--neon-cyan)]/40 flex flex-col items-end min-w-[170px]">
+              <div className="p-4 rounded-2xl bg-slate-950/80 border border-[var(--chrome-border)] flex flex-col items-end min-w-[170px]">
                 <span className="text-[10px] font-bold text-slate-400 tracking-wider uppercase">
                   DISPATCH DESK
                 </span>
@@ -453,7 +453,11 @@ export default function WithdrawPage() {
             </Link>
             <button
               type="button"
-              className="flex-1 py-3 px-4 rounded-xl font-heading font-black text-xs sm:text-sm uppercase tracking-wider flex items-center justify-center gap-2 transition-all bg-[var(--neon-cyan)] text-black shadow-[0_0_15px_rgba(0,240,255,0.4)]"
+              className="flex-1 py-3 px-4 rounded-xl font-heading font-black text-xs sm:text-sm uppercase tracking-wider flex items-center justify-center gap-2 transition-all text-black"
+              style={{
+                background: 'var(--primary-gradient)',
+                boxShadow: '0 0 15px var(--neon-cyan-glow)',
+              }}
             >
               <ArrowUpRight size={16} strokeWidth={2.5} />
               <span>Redeem / Cashout</span>
@@ -781,7 +785,11 @@ export default function WithdrawPage() {
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="w-full py-4 rounded-2xl font-heading font-black text-base tracking-wider bg-gradient-to-r from-[var(--neon-cyan)] to-blue-500 text-black shadow-[0_0_25px_rgba(0,240,255,0.4)] hover:scale-101 active:scale-99 transition-all disabled:opacity-50 mt-4 cursor-pointer"
+                  className="w-full py-4 rounded-2xl font-heading font-black text-base tracking-wider text-black hover:scale-101 active:scale-99 transition-all disabled:opacity-50 mt-4 cursor-pointer"
+                  style={{
+                    background: 'var(--primary-gradient)',
+                    boxShadow: '0 0 25px var(--neon-cyan-glow)',
+                  }}
                 >
                   {submitting
                     ? 'SUBMITTING CASHOUT...'
@@ -792,12 +800,12 @@ export default function WithdrawPage() {
 
             {/* Right 5 Columns: Cashout Guidelines */}
             <div className="lg:col-span-5 space-y-6">
-              <div className="p-5 sm:p-6 rounded-3xl bg-[#0d102b] border border-cyan-500/30 shadow-lg space-y-4">
+              <div className="p-5 sm:p-6 rounded-3xl bg-[var(--bg-card)] border border-[var(--chrome-border)] shadow-lg space-y-4">
                 <div className="flex items-center justify-between border-b border-slate-800 pb-3">
                   <span className="text-xs font-heading font-bold text-[var(--neon-cyan)] uppercase tracking-wider">
                     Redemption Protocol
                   </span>
-                  <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-cyan-500/20 text-cyan-300">
+                  <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[var(--neon-cyan)]/20 text-[var(--neon-cyan)]">
                     GUARANTEED
                   </span>
                 </div>

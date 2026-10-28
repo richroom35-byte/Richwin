@@ -390,7 +390,7 @@ export default function AuthModal({
               width: '260px',
               height: '260px',
               borderRadius: '50%',
-              background: 'radial-gradient(circle, rgba(0, 240, 255, 0.25) 0%, transparent 70%)',
+              background: 'radial-gradient(circle, var(--neon-cyan-glow) 0%, transparent 70%)',
               pointerEvents: 'none',
               filter: 'blur(30px)',
             }}
@@ -403,7 +403,7 @@ export default function AuthModal({
               width: '240px',
               height: '240px',
               borderRadius: '50%',
-              background: 'radial-gradient(circle, rgba(224, 38, 216, 0.25) 0%, transparent 70%)',
+              background: 'radial-gradient(circle, var(--neon-purple-glow) 0%, transparent 70%)',
               pointerEvents: 'none',
               filter: 'blur(30px)',
             }}
@@ -413,13 +413,13 @@ export default function AuthModal({
           <div style={{ position: 'relative', zIndex: 2 }}>
             <img
               src="/images/logo.png"
-              alt="Players Paradise Hub"
+              alt="Rich Room VIP"
               style={{
                 height: '56px',
                 width: 'auto',
                 maxHeight: '60px',
                 objectFit: 'contain',
-                filter: 'drop-shadow(0 0 16px rgba(0, 240, 255, 0.6)) drop-shadow(0 0 24px rgba(224, 38, 216, 0.45))',
+                filter: 'drop-shadow(0 0 16px var(--neon-cyan-glow))',
                 marginBottom: '16px',
               }}
             />
@@ -429,20 +429,20 @@ export default function AuthModal({
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '6px',
-                backgroundColor: 'rgba(0, 240, 255, 0.12)',
-                border: '1px solid rgba(0, 240, 255, 0.4)',
+                backgroundColor: 'var(--neon-cyan-glow)',
+                border: '1px solid var(--chrome-border)',
                 borderRadius: '9999px',
                 padding: '4px 12px',
                 marginBottom: '14px',
               }}
             >
-              <Sparkles size={12} color="#00F0FF" />
+              <Sparkles size={12} color="var(--neon-cyan)" />
               <span
                 style={{
                   fontFamily: 'Lexend, sans-serif',
                   fontSize: '10px',
                   fontWeight: 900,
-                  color: '#00F0FF',
+                  color: 'var(--neon-cyan)',
                   letterSpacing: '0.06em',
                   textTransform: 'uppercase',
                 }}
@@ -462,7 +462,7 @@ export default function AuthModal({
                 letterSpacing: '-0.02em',
               }}
             >
-              Experience True <span style={{ color: '#00F0FF' }}>Sovereign Tier</span> Gaming.
+              Experience True <span style={{ color: 'var(--neon-cyan)' }}>Sovereign Tier</span> Gaming.
             </h3>
 
             <p
@@ -691,11 +691,11 @@ export default function AuthModal({
             <div
               style={{
                 display: 'flex',
-                backgroundColor: '#070514',
+                backgroundColor: 'var(--bg-deep)',
                 borderRadius: '12px',
                 padding: '4px',
                 marginBottom: '16px',
-                border: '1px solid rgba(0, 240, 255, 0.25)',
+                border: '1px solid var(--chrome-border)',
                 position: 'relative',
               }}
             >
@@ -712,8 +712,8 @@ export default function AuthModal({
                   padding: '9px 0',
                   borderRadius: '9px',
                   border: 'none',
-                  backgroundColor: tab === 'login' ? '#00F0FF' : 'transparent',
-                  color: tab === 'login' ? '#070514' : '#9A91A8',
+                  backgroundColor: tab === 'login' ? 'var(--neon-cyan)' : 'transparent',
+                  color: tab === 'login' ? '#030712' : '#9A91A8',
                   fontFamily: 'Lexend, sans-serif',
                   fontSize: '11.5px',
                   fontWeight: 900,
@@ -721,7 +721,7 @@ export default function AuthModal({
                   textTransform: 'uppercase',
                   cursor: 'pointer',
                   transition: 'all 0.2s ease',
-                  boxShadow: tab === 'login' ? '0 0 20px rgba(0, 240, 255, 0.45)' : 'none',
+                  boxShadow: tab === 'login' ? '0 0 20px var(--neon-cyan-glow)' : 'none',
                 }}
               >
                 SIGN IN
@@ -738,8 +738,8 @@ export default function AuthModal({
                   padding: '9px 0',
                   borderRadius: '9px',
                   border: 'none',
-                  backgroundColor: tab === 'register' ? '#00F0FF' : 'transparent',
-                  color: tab === 'register' ? '#070514' : '#9A91A8',
+                  backgroundColor: tab === 'register' ? 'var(--neon-cyan)' : 'transparent',
+                  color: tab === 'register' ? '#030712' : '#9A91A8',
                   fontFamily: 'Lexend, sans-serif',
                   fontSize: '11.5px',
                   fontWeight: 900,
@@ -747,7 +747,7 @@ export default function AuthModal({
                   textTransform: 'uppercase',
                   cursor: 'pointer',
                   transition: 'all 0.2s ease',
-                  boxShadow: tab === 'register' ? '0 0 20px rgba(0, 240, 255, 0.45)' : 'none',
+                  boxShadow: tab === 'register' ? '0 0 20px var(--neon-cyan-glow)' : 'none',
                 }}
               >
                 REGISTER
@@ -951,8 +951,8 @@ export default function AuthModal({
                   disabled={loading}
                   style={{
                     width: '100%',
-                    background: 'linear-gradient(135deg, #E026D8 0%, #00F0FF 100%)',
-                    color: '#FFFFFF',
+                    background: 'var(--primary-gradient)',
+                    color: '#030712',
                     fontFamily: 'Lexend, sans-serif',
                     fontWeight: 900,
                     fontSize: '13px',
@@ -962,7 +962,7 @@ export default function AuthModal({
                     borderRadius: '12px',
                     border: 'none',
                     cursor: loading ? 'not-allowed' : 'pointer',
-                    boxShadow: '0 4px 22px rgba(0, 240, 255, 0.35)',
+                    boxShadow: '0 4px 22px var(--neon-cyan-glow)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -1235,8 +1235,8 @@ export default function AuthModal({
                   disabled={loading}
                   style={{
                     width: '100%',
-                    background: 'linear-gradient(135deg, #E026D8 0%, #00F0FF 100%)',
-                    color: '#FFFFFF',
+                    background: 'var(--primary-gradient)',
+                    color: '#030712',
                     fontFamily: 'Lexend, sans-serif',
                     fontWeight: 900,
                     fontSize: '12.5px',
@@ -1246,7 +1246,7 @@ export default function AuthModal({
                     borderRadius: '12px',
                     border: 'none',
                     cursor: loading ? 'not-allowed' : 'pointer',
-                    boxShadow: '0 4px 22px rgba(0, 240, 255, 0.35)',
+                    boxShadow: '0 4px 22px var(--neon-cyan-glow)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -1392,8 +1392,8 @@ export default function AuthModal({
                   disabled={loading || otp.length !== 6}
                   style={{
                     width: '100%',
-                    background: 'linear-gradient(135deg, #E026D8 0%, #00F0FF 100%)',
-                    color: '#FFFFFF',
+                    background: 'var(--primary-gradient)',
+                    color: '#030712',
                     fontFamily: 'Lexend, sans-serif',
                     fontWeight: 900,
                     fontSize: '13px',
@@ -1403,7 +1403,7 @@ export default function AuthModal({
                     borderRadius: '12px',
                     border: 'none',
                     cursor: loading || otp.length !== 6 ? 'not-allowed' : 'pointer',
-                    boxShadow: '0 4px 22px rgba(0, 240, 255, 0.35)',
+                    boxShadow: '0 4px 22px var(--neon-cyan-glow)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',

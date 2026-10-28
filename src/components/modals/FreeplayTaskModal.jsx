@@ -245,9 +245,9 @@ export default function FreeplayTaskModal({
 
   return (
     <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-black/85 backdrop-blur-md overflow-y-auto">
-      <div className="relative w-full max-w-xl rounded-3xl border border-cyan-500/30 bg-[#0c0824] p-5 sm:p-7 shadow-[0_20px_70px_rgba(0,0,0,0.9),0_0_40px_rgba(0,240,255,0.15)] my-8 text-white space-y-5">
+      <div className="relative w-full max-w-xl rounded-3xl border border-[var(--chrome-border)] bg-[var(--bg-card)] p-5 sm:p-7 shadow-[0_20px_70px_rgba(0,0,0,0.9),0_0_40px_var(--neon-cyan-glow)] my-8 text-white space-y-5">
         {/* Ambient Top Glow */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-80 h-32 bg-cyan-500/15 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-80 h-32 bg-[var(--neon-cyan)]/15 rounded-full blur-3xl pointer-events-none" />
 
         {/* Close Button */}
         <button
@@ -260,11 +260,17 @@ export default function FreeplayTaskModal({
 
         {/* Modal Header */}
         <div className="flex items-center gap-3.5 border-b border-white/10 pb-4">
-          <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-cyan-500 to-indigo-600 flex items-center justify-center text-black font-black shadow-[0_0_20px_rgba(0,240,255,0.4)] shrink-0">
+          <div
+            className="w-12 h-12 rounded-2xl flex items-center justify-center text-black font-black shrink-0"
+            style={{
+              background: 'var(--primary-gradient)',
+              boxShadow: '0 0 20px var(--neon-cyan-glow)',
+            }}
+          >
             <Gift size={24} className="text-black" />
           </div>
           <div>
-            <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-cyan-500/15 border border-cyan-500/40 text-cyan-300 text-[10px] font-mono font-black uppercase tracking-wider mb-1">
+            <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[var(--neon-cyan)]/15 border border-[var(--chrome-border)] text-[var(--neon-cyan)] text-[10px] font-mono font-black uppercase tracking-wider mb-1">
               <Sparkles size={11} />
               <span>${Number(freeplayAmount).toFixed(0)} Freeplay Task</span>
               {taskId && <span className="text-white">#{taskId}</span>}
@@ -299,8 +305,8 @@ export default function FreeplayTaskModal({
         <form onSubmit={handleSubmit} className="space-y-4">
           {/* Step 1: Select Game Platform */}
           <div className="space-y-2">
-            <label className="text-xs font-black text-cyan-300 uppercase tracking-wider flex items-center gap-1.5">
-              <span className="w-5 h-5 rounded-full bg-cyan-500 text-black flex items-center justify-center text-[10px] font-black">
+            <label className="text-xs font-black text-[var(--neon-cyan)] uppercase tracking-wider flex items-center gap-1.5">
+              <span className="w-5 h-5 rounded-full bg-[var(--neon-cyan)] text-black flex items-center justify-center text-[10px] font-black">
                 1
               </span>
               <span>Select Casino Game Platform:</span>
@@ -319,9 +325,18 @@ export default function FreeplayTaskModal({
                       onClick={() => setSelectedGame(game)}
                       className={`py-2 px-3 rounded-xl text-xs font-black font-heading transition border cursor-pointer text-center ${
                         isSelected
-                          ? 'bg-cyan-500 text-black border-cyan-400 shadow-[0_0_15px_rgba(0,240,255,0.4)]'
+                          ? 'text-black font-black'
                           : 'bg-slate-900/80 text-slate-300 border-slate-800 hover:border-slate-700'
                       }`}
+                      style={
+                        isSelected
+                          ? {
+                              background: 'var(--primary-gradient)',
+                              boxShadow: '0 0 15px var(--neon-cyan-glow)',
+                              border: '1px solid var(--chrome-border)',
+                            }
+                          : undefined
+                      }
                     >
                       {game}
                     </button>
@@ -332,10 +347,10 @@ export default function FreeplayTaskModal({
           </div>
 
           {/* Step 2: Verification Task Email Dispatch Info */}
-          <div className="p-4 rounded-2xl bg-[#070514] border border-cyan-500/25 space-y-3">
+          <div className="p-4 rounded-2xl bg-[var(--bg-surface)] border border-[var(--chrome-border)] space-y-3">
             <div className="flex items-center justify-between gap-2">
               <div className="flex items-center gap-2">
-                <span className="w-5 h-5 rounded-full bg-cyan-500 text-black flex items-center justify-center text-[10px] font-black">
+                <span className="w-5 h-5 rounded-full bg-[var(--neon-cyan)] text-black flex items-center justify-center text-[10px] font-black">
                   2
                 </span>
                 <span className="text-xs font-black text-white uppercase tracking-wider">
@@ -346,7 +361,7 @@ export default function FreeplayTaskModal({
                 type="button"
                 onClick={() => handleSendEmail(true)}
                 disabled={emailSending || resendCooldown > 0}
-                className="text-[11px] font-bold text-cyan-400 hover:text-cyan-300 flex items-center gap-1 disabled:opacity-50 cursor-pointer"
+                className="text-[11px] font-bold text-[var(--neon-cyan)] hover:brightness-125 flex items-center gap-1 disabled:opacity-50 cursor-pointer"
               >
                 <RefreshCw size={12} className={emailSending ? 'animate-spin' : ''} />
                 <span>

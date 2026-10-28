@@ -31,7 +31,7 @@ export default function GameCard({
     '/images/vegas-777.svg';
 
   return (
-    <div className="group relative rounded-2xl overflow-hidden border border-slate-800 bg-slate-900/80 hover:border-[var(--neon-cyan)]/70 hover:shadow-[0_10px_30px_rgba(0,240,255,0.2)] transition-all duration-300 flex flex-col">
+    <div className="group relative rounded-2xl overflow-hidden border border-slate-800 bg-slate-900/80 hover:border-[var(--neon-cyan)]/70 hover:shadow-[0_10px_30px_var(--neon-cyan-glow)] transition-all duration-300 flex flex-col">
       {/* Thumbnail Aspect Box */}
       <div
         className="relative aspect-[4/3] w-full overflow-hidden bg-slate-950"
@@ -57,7 +57,10 @@ export default function GameCard({
         {/* Top Badges */}
         <div className="absolute top-2.5 left-2.5 right-2.5 flex items-center justify-between pointer-events-none">
           {game.badge ? (
-            <span className="text-[10px] font-heading font-black px-2 py-0.5 rounded-md bg-[var(--neon-cyan)] text-black shadow-[0_0_10px_rgba(0,240,255,0.6)]">
+            <span
+              className="text-[10px] font-heading font-black px-2 py-0.5 rounded-md text-black"
+              style={{ background: 'var(--primary-gradient)', boxShadow: '0 0 10px var(--neon-cyan-glow)' }}
+            >
               {game.badge}
             </span>
           ) : (
@@ -100,7 +103,11 @@ export default function GameCard({
         <div className="grid grid-cols-2 gap-2 pt-1 border-t border-slate-800/80">
           <button
             onClick={() => onPlay(game)}
-            className="flex items-center justify-center gap-1.5 py-2 px-2 rounded-xl bg-gradient-to-r from-[var(--neon-cyan)] to-blue-500 hover:from-[var(--neon-cyan)] hover:to-cyan-400 text-black font-heading font-bold text-xs shadow-[0_0_12px_rgba(0,240,255,0.3)] hover:scale-102 transition-all"
+            className="flex items-center justify-center gap-1.5 py-2 px-2 rounded-xl text-black font-heading font-bold text-xs hover:scale-102 transition-all cursor-pointer"
+            style={{
+              background: 'var(--primary-gradient)',
+              boxShadow: '0 0 12px var(--neon-cyan-glow)',
+            }}
           >
             <Play size={13} fill="currentColor" />
             <span>PLAY NOW</span>

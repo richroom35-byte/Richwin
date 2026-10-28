@@ -426,8 +426,8 @@ export default function LiveChatWidget({ user: initialUser, soundEnabled = true 
           }}
           className="relative w-14 h-14 rounded-full flex items-center justify-center transition-transform hover:scale-110 active:scale-95 shadow-2xl cursor-pointer group"
           style={{
-            background: 'linear-gradient(135deg, #00F0FF 0%, #E026D8 100%)',
-            boxShadow: '0 8px 30px rgba(0, 240, 255, 0.5), 0 0 20px rgba(224, 38, 216, 0.4)',
+            background: 'var(--primary-gradient)',
+            boxShadow: '0 8px 30px var(--neon-cyan-glow), 0 0 20px var(--neon-purple-glow)',
           }}
           aria-label="Open 24/7 Live Support Concierge"
         >
@@ -492,9 +492,9 @@ export default function LiveChatWidget({ user: initialUser, soundEnabled = true 
         <div
           className="fixed live-chat-drawer right-3 sm:right-6 w-[94vw] sm:w-[410px] max-h-[84vh] h-[580px] rounded-2xl flex flex-col z-50 overflow-hidden shadow-2xl transition-all duration-150"
           style={{
-            backgroundColor: '#090616',
-            border: '1px solid rgba(0, 240, 255, 0.4)',
-            boxShadow: '0 25px 70px rgba(0, 0, 0, 0.95), 0 0 40px rgba(0, 240, 255, 0.2)',
+            backgroundColor: 'var(--bg-deep)',
+            border: '1px solid var(--chrome-border)',
+            boxShadow: '0 25px 70px rgba(0, 0, 0, 0.95), 0 0 40px var(--neon-cyan-glow)',
             ...(keyboardOffset > 0 ? { bottom: `${keyboardOffset + 12}px` } : {}),
           }}
         >
@@ -502,17 +502,17 @@ export default function LiveChatWidget({ user: initialUser, soundEnabled = true 
           <div
             className="p-3.5 border-b flex items-center justify-between"
             style={{
-              background: 'linear-gradient(135deg, #170E38 0%, #0D0722 100%)',
-              borderColor: 'rgba(0, 240, 255, 0.25)',
+              background: 'linear-gradient(135deg, var(--bg-card) 0%, var(--bg-surface) 100%)',
+              borderColor: 'var(--chrome-border)',
             }}
           >
             <div className="flex items-center gap-2.5">
               <div className="relative">
                 <div
                   className="w-9 h-9 rounded-full flex items-center justify-center text-xs font-black text-black shadow-md"
-                  style={{ background: 'linear-gradient(135deg, #00F0FF 0%, #E026D8 100%)' }}
+                  style={{ background: 'var(--primary-gradient)' }}
                 >
-                  PP
+                  RR
                 </div>
                 <span className="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-emerald-400 border-2 border-[#0B071A] animate-ping" />
               </div>
@@ -521,8 +521,8 @@ export default function LiveChatWidget({ user: initialUser, soundEnabled = true 
                   className="text-xs font-black text-white flex items-center gap-1.5"
                   style={{ fontFamily: 'Lexend, sans-serif' }}
                 >
-                  <span>Players Paradise VIP Desk</span>
-                  <Sparkles size={12} color="#00F0FF" />
+                  <span>Rich Room VIP Lounge Desk</span>
+                  <Sparkles size={12} color="var(--neon-cyan)" />
                 </h4>
                 <div className="flex items-center gap-2 mt-0.5">
                   <span className="text-[10px] text-emerald-400 font-bold flex items-center gap-1">
@@ -551,10 +551,10 @@ export default function LiveChatWidget({ user: initialUser, soundEnabled = true 
           {/* Compliance & Mode Notice */}
           <div
             className="px-3 py-1.5 border-b flex items-center justify-between text-[10px] text-gray-400"
-            style={{ backgroundColor: '#06030F', borderColor: 'rgba(255, 255, 255, 0.06)' }}
+            style={{ backgroundColor: 'var(--bg-surface)', borderColor: 'rgba(255, 255, 255, 0.06)' }}
           >
             <div className="flex items-center gap-1.5">
-              <Shield size={11} color="#00F0FF" className="shrink-0" />
+              <Shield size={11} color="var(--neon-cyan)" className="shrink-0" />
               <span>Encrypted 24/7 VIP Hospitality & File Uploads</span>
             </div>
             {!currentUser ? (
@@ -777,10 +777,10 @@ export default function LiveChatWidget({ user: initialUser, soundEnabled = true 
             <button
               type="submit"
               disabled={(!inputMessage.trim() && !attachedImage) || sending}
-              className="p-2.5 rounded-xl font-bold flex items-center justify-center transition disabled:opacity-40 cursor-pointer shrink-0"
+              className="p-2.5 rounded-xl font-bold flex items-center justify-center transition disabled:opacity-40 cursor-pointer shrink-0 text-black"
               style={{
-                background: 'linear-gradient(135deg, #E026D8 0%, #00F0FF 100%)',
-                color: '#FFFFFF',
+                background: 'var(--primary-gradient)',
+                boxShadow: '0 0 12px var(--neon-cyan-glow)',
               }}
             >
               {sending ? (

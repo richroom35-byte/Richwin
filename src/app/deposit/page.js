@@ -840,7 +840,11 @@ export default function DepositPage() {
                       href={selectedGateway.paymentUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-full py-3.5 px-4 rounded-2xl bg-gradient-to-r from-[var(--neon-cyan)] to-blue-500 hover:from-cyan-400 hover:to-blue-400 text-black font-heading font-black text-xs sm:text-sm tracking-wide flex items-center justify-center gap-2 shadow-lg shadow-cyan-500/25 transition-all hover:scale-[1.02] active:scale-[0.98]"
+                      className="w-full py-3.5 px-4 rounded-2xl text-black font-heading font-black text-xs sm:text-sm tracking-wide flex items-center justify-center gap-2 transition-all hover:scale-[1.02] active:scale-[0.98]"
+                      style={{
+                        background: 'var(--primary-gradient)',
+                        boxShadow: '0 0 20px var(--neon-cyan-glow)',
+                      }}
                     >
                       <span>OPEN &amp; PAY VIA {selectedGateway.name.toUpperCase()}</span>
                       <ExternalLink size={16} />
