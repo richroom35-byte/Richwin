@@ -437,15 +437,15 @@ export default function DepositPage() {
         {/* Center Content Body */}
         <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-6">
           {/* Header Banner */}
-          <div className="relative overflow-hidden rounded-3xl border border-emerald-500/30 bg-gradient-to-r from-emerald-950/40 via-slate-900 to-[#0c102b] p-6 sm:p-8 shadow-[0_0_40px_rgba(16,185,129,0.15)]">
+          <div className="relative overflow-hidden rounded-3xl border border-[var(--chrome-border)] bg-[var(--bg-card)] p-6 sm:p-8 shadow-[0_0_40px_var(--neon-cyan-glow)]">
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
               <div>
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/40 text-emerald-400 text-xs font-bold uppercase tracking-wider mb-2">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--neon-cyan)]/10 border border-[var(--chrome-border)] text-[var(--neon-cyan)] text-xs font-bold uppercase tracking-wider mb-2">
                   <ArrowDownLeft size={14} />
                   <span>Instant Player Deposit Gateway</span>
                 </div>
                 <h1 className="text-2xl sm:text-3xl font-heading font-black text-white tracking-tight">
-                  LOAD YOUR <span className="text-emerald-400">PLAYING BALANCE</span>
+                  LOAD YOUR <span className="text-[var(--neon-cyan)]">PLAYING BALANCE</span>
                 </h1>
                 <p className="text-xs sm:text-sm text-slate-300 mt-1 max-w-xl">
                   Fund your account instantly with 0% fees. Direct crediting for Fire Kirin, Orion Stars, Juwa, Panda Master, and Ultra Panda.
@@ -453,14 +453,14 @@ export default function DepositPage() {
               </div>
 
               {/* Balance Widget Card */}
-              <div className="p-4 rounded-2xl bg-slate-950/80 border border-emerald-500/40 flex flex-col items-end min-w-[160px]">
+              <div className="p-4 rounded-2xl bg-slate-950/80 border border-[var(--chrome-border)] flex flex-col items-end min-w-[160px]">
                 <span className="text-[10px] font-bold text-slate-400 tracking-wider uppercase">
                   WALLET BALANCE
                 </span>
-                <span className="font-mono font-black text-2xl sm:text-3xl text-emerald-400 mt-0.5">
+                <span className="font-mono font-black text-2xl sm:text-3xl text-[var(--neon-cyan)] mt-0.5">
                   ${Number(user?.balanceSC ?? user?.balance ?? 0).toFixed(2)} SC
                 </span>
-                <span className="text-[10px] text-emerald-300/80 flex items-center gap-1 mt-1 font-mono">
+                <span className="text-[10px] text-[var(--neon-cyan)]/90 flex items-center gap-1 mt-1 font-mono">
                   <CheckCircle2 size={11} /> 1:1 USD Redeemable
                 </span>
               </div>
@@ -471,7 +471,11 @@ export default function DepositPage() {
           <div className="flex items-center gap-2 p-1.5 rounded-2xl bg-slate-900/90 border border-slate-800 max-w-md shadow-lg">
             <button
               type="button"
-              className="flex-1 py-3 px-4 rounded-xl font-heading font-black text-xs sm:text-sm uppercase tracking-wider flex items-center justify-center gap-2 transition-all bg-emerald-500 text-black shadow-[0_0_15px_rgba(16,185,129,0.4)]"
+              className="flex-1 py-3 px-4 rounded-xl font-heading font-black text-xs sm:text-sm uppercase tracking-wider flex items-center justify-center gap-2 transition-all text-black"
+              style={{
+                background: 'var(--primary-gradient)',
+                boxShadow: '0 0 15px var(--neon-cyan-glow)',
+              }}
             >
               <ArrowDownLeft size={16} strokeWidth={2.5} />
               <span>Deposit / Load</span>
@@ -490,7 +494,7 @@ export default function DepositPage() {
             <div
               className={`p-4 rounded-2xl border flex items-center gap-3 text-sm font-semibold transition-all ${
                 statusMessage.type === 'success'
-                  ? 'bg-emerald-950/70 border-emerald-500 text-emerald-200'
+                  ? 'bg-slate-900/90 border-[var(--neon-cyan)] text-[var(--neon-cyan)]'
                   : 'bg-red-950/70 border-red-500 text-red-200'
               }`}
             >
@@ -504,10 +508,13 @@ export default function DepositPage() {
             {/* Left 7 Columns: Step 1, 2, 3 Inputs */}
             <div className="lg:col-span-7 space-y-6">
               {/* Step 1: Select Payment Gateway */}
-              <div className="p-5 sm:p-6 rounded-3xl bg-[#0d102b] border border-slate-800 space-y-4">
+              <div className="p-5 sm:p-6 rounded-3xl bg-[var(--bg-card)] border border-[var(--chrome-border)] space-y-4">
                 <div className="flex items-center justify-between">
                   <h3 className="text-sm font-heading font-black text-white uppercase tracking-wider flex items-center gap-2">
-                    <span className="w-6 h-6 rounded-full bg-emerald-500 text-black flex items-center justify-center text-xs font-black">
+                    <span
+                      className="w-6 h-6 rounded-full text-black flex items-center justify-center text-xs font-black"
+                      style={{ background: 'var(--primary-gradient)' }}
+                    >
                       1
                     </span>
                     Select Payment Gateway
@@ -525,16 +532,25 @@ export default function DepositPage() {
                         onClick={() => setSelectedGateway(gw)}
                         className={`p-3.5 rounded-2xl border text-left transition-all flex flex-col justify-between cursor-pointer ${
                           isSelected
-                            ? 'bg-emerald-950/50 border-emerald-400 shadow-[0_0_15px_rgba(16,185,129,0.3)]'
+                            ? 'border-[var(--neon-cyan)] shadow-lg'
                             : 'bg-slate-900/80 border-slate-800 hover:border-slate-700'
                         }`}
+                        style={
+                          isSelected
+                            ? {
+                                background: 'rgba(255, 255, 255, 0.05)',
+                                boxShadow: '0 0 15px var(--neon-cyan-glow)',
+                                borderColor: 'var(--neon-cyan)',
+                              }
+                            : undefined
+                        }
                       >
                         <div className="flex items-center justify-between mb-2">
                           <span className="text-xs font-heading font-bold text-white truncate">
                             {gw.name}
                           </span>
                           {isSelected && (
-                            <CheckCircle2 size={14} className="text-emerald-400 flex-shrink-0" />
+                            <CheckCircle2 size={14} className="text-[var(--neon-cyan)] flex-shrink-0" />
                           )}
                         </div>
                         <span className="text-[10px] text-slate-400 uppercase font-mono">
@@ -547,15 +563,18 @@ export default function DepositPage() {
               </div>
 
               {/* Step 2: Choose Deposit Amount & Live Bonus Preview */}
-              <div className="p-5 sm:p-6 rounded-3xl bg-[#0d102b] border border-slate-800 space-y-4">
+              <div className="p-5 sm:p-6 rounded-3xl bg-[var(--bg-card)] border border-[var(--chrome-border)] space-y-4">
                 <div className="flex items-center justify-between">
                   <h3 className="text-sm font-heading font-black text-white uppercase tracking-wider flex items-center gap-2">
-                    <span className="w-6 h-6 rounded-full bg-emerald-500 text-black flex items-center justify-center text-xs font-black">
+                    <span
+                      className="w-6 h-6 rounded-full text-black flex items-center justify-center text-xs font-black"
+                      style={{ background: 'var(--primary-gradient)' }}
+                    >
                       2
                     </span>
                     Select Amount ($ USD)
                   </h3>
-                  <span className="text-xs text-emerald-400 font-bold flex items-center gap-1 font-mono">
+                  <span className="text-xs text-[var(--neon-cyan)] font-bold flex items-center gap-1 font-mono">
                     <Sparkles size={13} className="text-amber-400" />
                     +{bonusPercent}% {isWelcome ? 'First Deposit Match' : 'Reload Bonus'}
                   </span>
@@ -563,23 +582,34 @@ export default function DepositPage() {
 
                 {/* Amount presets */}
                 <div className="grid grid-cols-5 gap-2">
-                  {presetAmounts.map((p) => (
-                    <button
-                      key={p}
-                      type="button"
-                      onClick={() => {
-                        setAmount(p);
-                        setCustomAmount('');
-                      }}
-                      className={`py-3 rounded-xl font-heading font-bold text-sm transition-all cursor-pointer ${
-                        !customAmount && amount === p
-                          ? 'bg-emerald-500 text-black shadow-[0_0_15px_rgba(16,185,129,0.4)]'
-                          : 'bg-slate-900 border border-slate-800 text-slate-200 hover:bg-slate-800'
-                      }`}
-                    >
-                      ${p}
-                    </button>
-                  ))}
+                  {presetAmounts.map((p) => {
+                    const isSelected = !customAmount && amount === p;
+                    return (
+                      <button
+                        key={p}
+                        type="button"
+                        onClick={() => {
+                          setAmount(p);
+                          setCustomAmount('');
+                        }}
+                        className={`py-3 rounded-xl font-heading font-bold text-sm transition-all cursor-pointer ${
+                          isSelected
+                            ? 'text-black shadow-lg font-black'
+                            : 'bg-slate-900 border border-slate-800 text-slate-200 hover:bg-slate-800'
+                        }`}
+                        style={
+                          isSelected
+                            ? {
+                                background: 'var(--primary-gradient)',
+                                boxShadow: '0 0 15px var(--neon-cyan-glow)',
+                              }
+                            : undefined
+                        }
+                      >
+                        ${p}
+                      </button>
+                    );
+                  })}
                 </div>
 
                 {/* Custom Amount input */}
@@ -599,28 +629,28 @@ export default function DepositPage() {
                       placeholder="e.g. 75"
                       value={customAmount}
                       onChange={(e) => setCustomAmount(e.target.value)}
-                      className="w-full pl-9 pr-4 py-3 rounded-xl bg-slate-900 border border-slate-700 text-white font-mono font-bold focus:outline-none focus:border-emerald-400 text-sm"
+                      className="w-full pl-9 pr-4 py-3 rounded-xl bg-slate-900 border border-slate-700 text-white font-mono font-bold focus:outline-none focus:border-[var(--neon-cyan)] text-sm"
                     />
                   </div>
                 </div>
 
                 {/* Real-time Dynamic Bonus Breakdown Card */}
-                <div className="p-4 rounded-2xl bg-gradient-to-r from-emerald-950/40 via-purple-950/30 to-[#0e122b] border border-emerald-500/30 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                <div className="p-4 rounded-2xl bg-[var(--bg-surface)] border border-[var(--chrome-border)] flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-md">
                   <div>
-                    <span className="text-[10px] font-bold uppercase text-emerald-400 tracking-wider flex items-center gap-1.5">
+                    <span className="text-[10px] font-bold uppercase text-[var(--neon-cyan)] tracking-wider flex items-center gap-1.5">
                       <Sparkles size={12} className="text-amber-400" />
                       Active Promo Breakdown ({isWelcome ? 'First Deposit Pack' : 'Reload Boost'})
                     </span>
                     <p className="text-xs text-slate-300 mt-0.5">
                       Deposit: <strong>${finalAmount.toFixed(2)}</strong> + Bonus (+{bonusPercent}%):{' '}
-                      <span className="text-emerald-400 font-bold font-mono">+${bonusSC.toFixed(2)} SC</span>
+                      <span className="text-[var(--neon-cyan)] font-bold font-mono">+${bonusSC.toFixed(2)} SC</span>
                     </p>
                   </div>
                   <div className="text-right">
                     <span className="text-[10px] text-slate-400 uppercase font-mono block">
                       Total To Receive:
                     </span>
-                    <span className="text-xl font-mono font-black text-emerald-400">
+                    <span className="text-xl font-mono font-black text-[var(--neon-cyan)]">
                       ${totalSC.toFixed(2)} SC
                     </span>
                   </div>
@@ -630,10 +660,13 @@ export default function DepositPage() {
               {/* Step 3: Player Sender Details & Screenshot Upload */}
               <form
                 onSubmit={handleSubmitDeposit}
-                className="p-5 sm:p-6 rounded-3xl bg-[#0d102b] border border-slate-800 space-y-4"
+                className="p-5 sm:p-6 rounded-3xl bg-[var(--bg-card)] border border-[var(--chrome-border)] space-y-4"
               >
                 <h3 className="text-sm font-heading font-black text-white uppercase tracking-wider flex items-center gap-2">
-                  <span className="w-6 h-6 rounded-full bg-emerald-500 text-black flex items-center justify-center text-xs font-black">
+                  <span
+                    className="w-6 h-6 rounded-full text-black flex items-center justify-center text-xs font-black"
+                    style={{ background: 'var(--primary-gradient)' }}
+                  >
                     3
                   </span>
                   Submit Proof &amp; Tag Details
@@ -656,12 +689,12 @@ export default function DepositPage() {
                         <>
                           <div className="flex items-center justify-between mb-1.5">
                             <label className="text-xs font-bold text-slate-300 uppercase flex items-center gap-1.5">
-                              <Gamepad2 size={13} className="text-cyan-400" />
+                              <Gamepad2 size={13} className="text-[var(--neon-cyan)]" />
                               Select Target Game Platform *
                             </label>
                             {linkedAcc ? (
-                              <span className="text-[10px] text-emerald-300 font-bold flex items-center gap-1 bg-emerald-950/80 border border-emerald-500/40 px-2 py-0.5 rounded-full font-mono">
-                                <CheckCircle2 size={10} className="text-emerald-400" />
+                              <span className="text-[10px] text-[var(--neon-cyan)] font-bold flex items-center gap-1 bg-[var(--neon-cyan)]/10 border border-[var(--chrome-border)] px-2 py-0.5 rounded-full font-mono">
+                                <CheckCircle2 size={10} className="text-[var(--neon-cyan)]" />
                                 Linked ID: @{linkedAcc.username}
                               </span>
                             ) : (
@@ -675,7 +708,7 @@ export default function DepositPage() {
                           <select
                             value={selectedGame || (activeGameList[0] || '')}
                             onChange={(e) => setSelectedGame(e.target.value)}
-                            className="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 text-white font-heading font-bold text-sm focus:outline-none focus:border-cyan-400"
+                            className="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 text-white font-heading font-bold text-sm focus:outline-none focus:border-[var(--neon-cyan)]"
                           >
                             {activeGameList.map((g) => {
                               const match = userGameAccounts.find(
@@ -690,10 +723,10 @@ export default function DepositPage() {
                           </select>
 
                           {linkedAcc ? (
-                            <p className="text-[11px] text-emerald-400/90 mt-1.5 flex items-center gap-1.5">
+                            <p className="text-[11px] text-[var(--neon-cyan)] mt-1.5 flex items-center gap-1.5">
                               <CheckCircle2 size={12} className="shrink-0" />
                               <span>
-                                Your deposit will be associated with your active <strong>{selectedGame}</strong> ID: <code className="text-emerald-300 bg-emerald-950/60 px-1 py-0.5 rounded">@{linkedAcc.username}</code>
+                                Your deposit will be associated with your active <strong>{selectedGame}</strong> ID: <code className="text-[var(--neon-cyan)] bg-slate-900/90 border border-[var(--chrome-border)] px-1 py-0.5 rounded">@{linkedAcc.username}</code>
                               </span>
                             </p>
                           ) : (
@@ -720,7 +753,7 @@ export default function DepositPage() {
                       placeholder="e.g. $JohnDoe77 / @mycashtag / wallet address"
                       value={senderAccount}
                       onChange={(e) => setSenderAccount(e.target.value)}
-                      className="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 text-white font-mono text-sm focus:outline-none focus:border-emerald-400"
+                      className="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 text-white font-mono text-sm focus:outline-none focus:border-[var(--neon-cyan)]"
                     />
                     <span className="text-[10.5px] text-slate-400 mt-0.5 block">
                       Enter the exact Cashtag or handle you sent the payment from.
@@ -738,7 +771,7 @@ export default function DepositPage() {
                       placeholder="e.g. your-cashapp-email@domain.com"
                       value={playerPaymentEmail}
                       onChange={(e) => setPlayerPaymentEmail(e.target.value)}
-                      className="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 text-white font-mono text-sm focus:outline-none focus:border-emerald-400"
+                      className="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 text-white font-mono text-sm focus:outline-none focus:border-[var(--neon-cyan)]"
                     />
                     <span className="text-[10.5px] text-slate-400 mt-0.5 block">
                       Email tied to your payment app so desk agents can match your transaction instantly.
@@ -755,7 +788,7 @@ export default function DepositPage() {
                       placeholder="e.g. #981240192 or TxHash"
                       value={transactionId}
                       onChange={(e) => setTransactionId(e.target.value)}
-                      className="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 text-white font-mono text-sm focus:outline-none focus:border-emerald-400"
+                      className="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 text-white font-mono text-sm focus:outline-none focus:border-[var(--neon-cyan)]"
                     />
                   </div>
 
@@ -764,7 +797,7 @@ export default function DepositPage() {
                     <label className="block text-xs font-bold text-slate-300 mb-1">
                       Upload Payment Proof Screenshot *
                     </label>
-                    <div className="border-2 border-dashed border-slate-700 hover:border-emerald-500/60 rounded-2xl p-4 text-center cursor-pointer transition-colors bg-slate-900/40 relative">
+                    <div className="border-2 border-dashed border-slate-700 hover:border-[var(--neon-cyan)]/60 rounded-2xl p-4 text-center cursor-pointer transition-colors bg-slate-900/40 relative">
                       <input
                         type="file"
                         accept="image/*"
@@ -773,7 +806,7 @@ export default function DepositPage() {
                         className="absolute inset-0 opacity-0 cursor-pointer w-full h-full"
                       />
                       <div className="flex flex-col items-center gap-1.5 pointer-events-none">
-                        <Upload size={22} className="text-emerald-400" />
+                        <Upload size={22} className="text-[var(--neon-cyan)]" />
                         <span className="text-xs font-bold text-slate-200">
                           {proofFileName ? `Selected: ${proofFileName}` : 'Click or drop payment screenshot here'}
                         </span>
@@ -790,7 +823,7 @@ export default function DepositPage() {
                             alt="Receipt Preview"
                             className="w-12 h-12 object-cover rounded-lg border border-slate-700"
                           />
-                          <span className="text-xs font-mono text-emerald-400 font-bold">
+                          <span className="text-xs font-mono text-[var(--neon-cyan)] font-bold">
                             Screenshot Ready
                           </span>
                         </div>
@@ -812,7 +845,11 @@ export default function DepositPage() {
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="w-full py-4 rounded-2xl font-heading font-black text-base tracking-wider bg-gradient-to-r from-emerald-400 to-teal-500 text-black shadow-[0_0_25px_rgba(16,185,129,0.4)] hover:scale-101 active:scale-99 transition-all disabled:opacity-50 mt-4 cursor-pointer"
+                  className="w-full py-4 rounded-2xl font-heading font-black text-base tracking-wider text-black hover:scale-101 active:scale-99 transition-all disabled:opacity-50 mt-4 cursor-pointer"
+                  style={{
+                    background: 'var(--primary-gradient)',
+                    boxShadow: '0 0 25px var(--neon-cyan-glow)',
+                  }}
                 >
                   {submitting
                     ? 'SUBMITTING REQUEST...'
@@ -824,12 +861,12 @@ export default function DepositPage() {
             {/* Right 5 Columns: Gateway Pay Button, Tag Name, QR Code & Download */}
             <div className="lg:col-span-5 space-y-6">
               {selectedGateway && (
-                <div className="p-5 sm:p-6 rounded-3xl bg-[#0d102b] border border-emerald-500/30 shadow-lg space-y-5">
+                <div className="p-5 sm:p-6 rounded-3xl bg-[var(--bg-card)] border border-[var(--chrome-border)] shadow-lg space-y-5">
                   <div className="flex items-center justify-between border-b border-slate-800 pb-3">
-                    <span className="text-xs font-heading font-bold text-emerald-400 uppercase tracking-wider">
+                    <span className="text-xs font-heading font-bold text-[var(--neon-cyan)] uppercase tracking-wider">
                       {selectedGateway.name} Checkout Desk
                     </span>
-                    <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300">
+                    <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[var(--neon-cyan)]/20 text-[var(--neon-cyan)] border border-[var(--chrome-border)]">
                       LIVE DESK
                     </span>
                   </div>
@@ -864,7 +901,11 @@ export default function DepositPage() {
                         <button
                           type="button"
                           onClick={() => handleCopy(activeTagName, 'gwTag')}
-                          className="px-3 py-1.5 rounded-xl bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-400 text-xs font-bold flex items-center gap-1.5 flex-shrink-0 transition-colors cursor-pointer"
+                          className="px-3 py-1.5 rounded-xl text-black text-xs font-bold flex items-center gap-1.5 flex-shrink-0 transition-all cursor-pointer hover:opacity-90"
+                          style={{
+                            background: 'var(--primary-gradient)',
+                            boxShadow: '0 0 10px var(--neon-cyan-glow)',
+                          }}
                         >
                           {copiedField === 'gwTag' ? <Check size={14} /> : <Copy size={14} />}
                           <span>{copiedField === 'gwTag' ? 'Copied' : 'Copy Tag'}</span>
@@ -898,13 +939,16 @@ export default function DepositPage() {
                           onClick={() => setQrModalOpen(true)}
                           className="flex-1 py-2 px-3 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-300 text-xs font-bold flex items-center justify-center gap-1.5 transition-colors cursor-pointer"
                         >
-                          <Eye size={14} className="text-cyan-400" />
+                          <Eye size={14} className="text-[var(--neon-cyan)]" />
                           <span>View Full</span>
                         </button>
                         <button
                           type="button"
                           onClick={() => handleDownloadQR(selectedGateway.qrCode, selectedGateway.name)}
-                          className="flex-1 py-2 px-3 rounded-xl bg-emerald-500/20 hover:bg-emerald-500/30 border border-emerald-500/40 text-emerald-300 text-xs font-bold flex items-center justify-center gap-1.5 transition-colors cursor-pointer"
+                          className="flex-1 py-2 px-3 rounded-xl border border-[var(--chrome-border)] text-[var(--neon-cyan)] text-xs font-bold flex items-center justify-center gap-1.5 transition-colors cursor-pointer hover:bg-slate-800/80"
+                          style={{
+                            background: 'rgba(255, 255, 255, 0.05)',
+                          }}
                         >
                           <Download size={14} />
                           <span>Download QR</span>
@@ -931,13 +975,13 @@ export default function DepositPage() {
               )}
 
               {/* Safe Escrow Assurance Card */}
-              <div className="p-5 rounded-3xl bg-slate-900/60 border border-slate-800 space-y-3">
+              <div className="p-5 rounded-3xl bg-slate-900/60 border border-[var(--chrome-border)] space-y-3">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 flex items-center justify-center">
+                  <div className="w-10 h-10 rounded-xl bg-[var(--neon-cyan)]/20 border border-[var(--chrome-border)] text-[var(--neon-cyan)] flex items-center justify-center">
                     <ShieldCheck size={20} />
                   </div>
                   <div>
-                    <h4 className="text-xs font-bold text-white uppercase">Players Paradise Guarantee</h4>
+                    <h4 className="text-xs font-bold text-white uppercase">Rich Room VIP Guarantee</h4>
                     <p className="text-[11px] text-slate-400">All deposits are 100% verified &amp; credited</p>
                   </div>
                 </div>
@@ -951,10 +995,10 @@ export default function DepositPage() {
           </div>
 
           {/* Previous Deposit History Table */}
-          <div className="p-5 sm:p-6 rounded-3xl bg-[#0d102b] border border-slate-800 space-y-4">
+          <div className="p-5 sm:p-6 rounded-3xl bg-[var(--bg-card)] border border-[var(--chrome-border)] space-y-4">
             <div className="flex items-center justify-between">
               <h3 className="text-base font-heading font-black text-white flex items-center gap-2">
-                <Clock size={16} className="text-emerald-400" />
+                <Clock size={16} className="text-[var(--neon-cyan)]" />
                 <span>Your Deposit History</span>
               </h3>
               <button
@@ -1002,7 +1046,7 @@ export default function DepositPage() {
                               {d.gameTitle || 'Standard'}
                             </span>
                             {d.gameAccountUsername ? (
-                              <span className="text-[10.5px] text-emerald-400 font-mono block">
+                              <span className="text-[10.5px] text-[var(--neon-cyan)] font-mono block">
                                 @{d.gameAccountUsername}
                               </span>
                             ) : d.gameTitle ? (
@@ -1015,7 +1059,7 @@ export default function DepositPage() {
                           <td className="py-3 px-3 text-slate-300 font-bold">
                             ${Number(d.amount || 0).toFixed(2)}
                           </td>
-                          <td className="py-3 px-3 text-emerald-400 font-black">
+                          <td className="py-3 px-3 text-[var(--neon-cyan)] font-black">
                             ${Number(totalCoins).toFixed(2)} SC
                           </td>
                           <td className="py-3 px-3 text-slate-300">
@@ -1028,7 +1072,7 @@ export default function DepositPage() {
                             <span
                               className={`px-2.5 py-1 rounded-full text-[10px] font-bold uppercase ${
                                 d.status === 'approved' || d.status === 'completed'
-                                  ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30'
+                                  ? 'bg-[var(--neon-cyan)]/20 text-[var(--neon-cyan)] border border-[var(--chrome-border)]'
                                   : isRejected
                                   ? 'bg-red-500/20 text-red-400 border border-red-500/30'
                                   : 'bg-amber-500/20 text-amber-300 border border-amber-500/30'
@@ -1067,7 +1111,7 @@ export default function DepositPage() {
           onClick={() => setQrModalOpen(false)}
         >
           <div
-            className="relative bg-slate-950 border border-emerald-400/50 p-6 rounded-3xl max-w-sm w-full text-center space-y-4 shadow-2xl"
+            className="relative bg-slate-950 border border-[var(--chrome-border)] p-6 rounded-3xl max-w-sm w-full text-center space-y-4 shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
             <button
@@ -1095,7 +1139,11 @@ export default function DepositPage() {
               <button
                 type="button"
                 onClick={() => handleDownloadQR(selectedGateway.qrCode, selectedGateway.name)}
-                className="w-full py-2.5 rounded-xl bg-emerald-500 text-black font-bold text-xs flex items-center justify-center gap-2 cursor-pointer"
+                className="w-full py-2.5 rounded-xl text-black font-bold text-xs flex items-center justify-center gap-2 cursor-pointer"
+                style={{
+                  background: 'var(--primary-gradient)',
+                  boxShadow: '0 0 15px var(--neon-cyan-glow)',
+                }}
               >
                 <Download size={14} />
                 <span>Save to Device</span>

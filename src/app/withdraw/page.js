@@ -509,7 +509,7 @@ export default function WithdrawPage() {
                             Select Game Won From *
                           </label>
                           {linkedAcc ? (
-                            <span className="text-[10px] text-emerald-400 font-bold flex items-center gap-1 bg-emerald-950/60 border border-emerald-500/40 px-2 py-0.5 rounded-full font-mono">
+                            <span className="text-[10px] text-[var(--neon-cyan)] font-bold flex items-center gap-1 bg-[var(--neon-cyan)]/10 border border-[var(--chrome-border)] px-2 py-0.5 rounded-full font-mono">
                               <CheckCircle2 size={10} />
                               ID: @{linkedAcc.username}
                             </span>
@@ -543,10 +543,10 @@ export default function WithdrawPage() {
                         </select>
 
                         {linkedAcc ? (
-                          <div className="p-2.5 rounded-xl bg-emerald-950/50 border border-emerald-500/30 flex items-center gap-2 mt-2 text-emerald-300 text-xs">
-                            <CheckCircle2 size={14} className="text-emerald-400 shrink-0" />
+                          <div className="p-2.5 rounded-xl bg-slate-900/80 border border-[var(--chrome-border)] flex items-center gap-2 mt-2 text-[var(--neon-cyan)] text-xs">
+                            <CheckCircle2 size={14} className="text-[var(--neon-cyan)] shrink-0" />
                             <span>
-                              Verified Game Account: <strong className="font-mono text-white bg-emerald-900/60 px-1.5 py-0.5 rounded">@{linkedAcc.username}</strong> will be submitted to Coin Allotment.
+                              Verified Game Account: <strong className="font-mono text-white bg-slate-950 border border-[var(--chrome-border)] px-1.5 py-0.5 rounded">@{linkedAcc.username}</strong> will be submitted to Coin Allotment.
                             </span>
                           </div>
                         ) : (
@@ -740,10 +740,10 @@ export default function WithdrawPage() {
                   {/* Upload 2: Payout QR Code Screenshot */}
                   <div>
                     <label className="block text-xs font-bold text-slate-300 mb-1 flex items-center gap-1.5">
-                      <QrCode size={14} className="text-emerald-400" />
+                      <QrCode size={14} className="text-[var(--neon-cyan)]" />
                       <span>2. Your Payout QR Code *</span>
                     </label>
-                    <div className="border-2 border-dashed border-slate-700 hover:border-emerald-500/60 rounded-2xl p-4 text-center cursor-pointer transition-colors bg-slate-900/40 relative">
+                    <div className="border-2 border-dashed border-slate-700 hover:border-[var(--neon-cyan)]/60 rounded-2xl p-4 text-center cursor-pointer transition-colors bg-slate-900/40 relative">
                       <input
                         type="file"
                         accept="image/*"
@@ -752,7 +752,7 @@ export default function WithdrawPage() {
                         className="absolute inset-0 opacity-0 cursor-pointer w-full h-full"
                       />
                       <div className="flex flex-col items-center gap-1 pointer-events-none">
-                        <Upload size={20} className="text-emerald-400" />
+                        <Upload size={20} className="text-[var(--neon-cyan)]" />
                         <span className="text-xs font-bold text-slate-200">
                           {qrCodeImageName ? `Selected: ${qrCodeImageName}` : 'Upload Payout QR Code'}
                         </span>
@@ -812,7 +812,7 @@ export default function WithdrawPage() {
 
                 <div className="space-y-3 text-xs text-slate-300">
                   <div className="flex items-start gap-2.5">
-                    <CheckCircle2 size={16} className="text-emerald-400 shrink-0 mt-0.5" />
+                    <CheckCircle2 size={16} className="text-[var(--neon-cyan)] shrink-0 mt-0.5" />
                     <div>
                       <strong className="text-white block">1. External Game Score Verification</strong>
                       <span className="text-[11px] text-slate-400">
@@ -822,7 +822,7 @@ export default function WithdrawPage() {
                   </div>
 
                   <div className="flex items-start gap-2.5">
-                    <CheckCircle2 size={16} className="text-emerald-400 shrink-0 mt-0.5" />
+                    <CheckCircle2 size={16} className="text-[var(--neon-cyan)] shrink-0 mt-0.5" />
                     <div>
                       <strong className="text-white block">2. Fast QR Code Dispatch</strong>
                       <span className="text-[11px] text-slate-400">
@@ -832,7 +832,7 @@ export default function WithdrawPage() {
                   </div>
 
                   <div className="flex items-start gap-2.5">
-                    <CheckCircle2 size={16} className="text-emerald-400 shrink-0 mt-0.5" />
+                    <CheckCircle2 size={16} className="text-[var(--neon-cyan)] shrink-0 mt-0.5" />
                     <div>
                       <strong className="text-white block">3. Rejection Protection Note</strong>
                       <span className="text-[11px] text-slate-400">
@@ -911,7 +911,7 @@ export default function WithdrawPage() {
                           <td className="py-3 px-3">
                             <span className="text-white font-bold block">{w.gameTitle || 'Game Platform'}</span>
                             {w.gameAccountUsername && (
-                              <span className="text-[10px] text-emerald-400 font-mono block">
+                              <span className="text-[10px] text-[var(--neon-cyan)] font-mono block">
                                 @{w.gameAccountUsername}
                               </span>
                             )}
@@ -927,7 +927,7 @@ export default function WithdrawPage() {
                             <span
                               className={`px-2.5 py-1 rounded-full text-[10px] font-bold uppercase ${
                                 w.status === 'approved' || w.status === 'completed'
-                                  ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30'
+                                  ? 'bg-[var(--neon-cyan)]/20 text-[var(--neon-cyan)] border border-[var(--chrome-border)]'
                                   : isRejected
                                   ? 'bg-red-500/20 text-red-400 border border-red-500/30'
                                   : w.status === 'pending_coin' || w.stage === 'coin_verification'
@@ -950,7 +950,7 @@ export default function WithdrawPage() {
                                 Reason: {w.rejectReason || w.coinRejectReason || w.financeRejectReason}
                               </span>
                             ) : w.status === 'approved' ? (
-                              <span className="text-emerald-400 text-[11px] font-semibold">Payout Dispatched ✓</span>
+                              <span className="text-[var(--neon-cyan)] text-[11px] font-semibold">Payout Dispatched ✓</span>
                             ) : w.status === 'pending_coin' || w.stage === 'coin_verification' ? (
                               <span className="text-amber-300 text-[11px] flex items-center gap-1">
                                 <Clock className="w-3 h-3 inline animate-pulse" /> Verifying Game Proof
