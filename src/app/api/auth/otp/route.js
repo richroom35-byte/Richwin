@@ -118,8 +118,8 @@ export async function POST(req) {
       // Send email via Hostinger SMTP
       const isReset = purpose === 'Password Reset' || purpose === 'Forgot Password';
       const emailSubject = isReset
-        ? `Your Players Paradise Password Reset Code: ${otpCode}`
-        : `Your Players Paradise Security Code: ${otpCode}`;
+        ? `Your Rich Room VIP Password Reset Code: ${otpCode}`
+        : `Your Rich Room VIP Security Code: ${otpCode}`;
 
       const sendResult = await sendEmail({
         to: cleanEmail,
